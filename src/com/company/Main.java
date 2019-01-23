@@ -35,7 +35,13 @@ public class Main {
             dailyAverageTempCelsius[i].setTempC(dailyAverageTemp[i].convertToCelsius());
             System.out.println(dailyAverageTempCelsius[i].getTempC());
         }
-        
+
+        for (int i = 0; i < dailyAverageTempCelsius.length; i++){
+            sumC += dailyAverageTempCelsius[i].getTempC();
+            avgC = sumC / dailyAverageTempCelsius.length;
+        }
+
+        System.out.println(" The average Celsius temperature is: " + avgC);
 
 
 
