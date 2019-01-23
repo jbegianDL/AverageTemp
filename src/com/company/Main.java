@@ -6,14 +6,16 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Temperature [] dailyAverageTemp = new Temperature[7];
-        Temperature temp = new Temperature();
-        double sum = 0;
-        double avg = 0;
+        Temperature [] dailyAverageTempCelsius = new Temperature[7];
+        double sumF = 0;
+        double avgF = 0;
+        double sumC = 0;
+        double avgC = 0;
 
         for (int i = 0; i < dailyAverageTemp.length; i++){
             dailyAverageTemp[i] = new Temperature();
             System.out.println("Please enter an average temperature in Fahrenheit: ");
-            dailyAverageTemp[i].setTemp(input.nextDouble());
+            dailyAverageTemp[i].setTempF(input.nextDouble());
         }
 
         for (int i = 0; i < dailyAverageTemp.length; i++){
@@ -21,16 +23,19 @@ public class Main {
         }
 
         for (int i = 0; i < dailyAverageTemp.length; i++){
-            sum += dailyAverageTemp[i].getTempF();
-            avg = sum / dailyAverageTemp.length;
+            sumF += dailyAverageTemp[i].getTempF();
+            avgF = sumF / dailyAverageTemp.length;
         }
 
-        System.out.println("The average Fahrenheit temperature is: " + avg);
+        System.out.println("The average Fahrenheit temperature is: " + avgF);
 
 
         for (int i = 0; i < dailyAverageTemp.length; i++){
-            System.out.println(dailyAverageTemp[i].convertToCelsius());
+            dailyAverageTempCelsius[i] = new Temperature();
+            dailyAverageTempCelsius[i].setTempC(dailyAverageTemp[i].convertToCelsius());
+            System.out.println(dailyAverageTempCelsius[i].getTempC());
         }
+        
 
 
 

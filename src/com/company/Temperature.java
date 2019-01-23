@@ -3,22 +3,28 @@ package com.company;
 public class Temperature {
     private double tempF;
     private double tempC;
-    private double sumTempF;
-    private double avgTempF;
-    private double avgTempC;
+    private double convertTempF;
 
-    public void setTemp(double usrInput){
-        tempF = usrInput;
+    public void setTempF(double fTempValue){
+        tempF = fTempValue;
     }
 
     public double getTempF(){
         return tempF;
     }
 
+    public void setTempC(double cTempValue){
+        tempC = cTempValue;
+    }
+
+    public double getTempC(){
+        return tempC;
+    }
+
 
     public double convertToCelsius(){
-        tempC = ((tempF - 32) / 1.8);
-        return tempC;
+        convertTempF = ((tempF - 32) / 1.8);
+        return convertTempF;
     }
 
 
